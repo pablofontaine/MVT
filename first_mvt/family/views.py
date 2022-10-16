@@ -18,3 +18,15 @@ def fun_create_family_member(request, name: str, last_name: str, age: int, relat
         context=context_dict,
         template_name='family/create_family_member.html',
     )
+
+def fun_show_family_members(request):
+    '''Esta función devuelve la lista de todos los miembros de la familia creados.'''
+    members = Family_member.objects.all()
+
+    context_dict = {'members': members}
+
+    return render(
+        request=request,
+        context=context_dict,
+        template_name='family/list_family_members.html',
+    )
