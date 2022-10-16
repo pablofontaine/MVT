@@ -1,4 +1,5 @@
-import imp
+from difflib import context_diff
+
 from django.http import HttpResponse
 from django.shortcuts import render
 
@@ -24,3 +25,14 @@ def fun_create_course(request, name: str, code: int):
     render = template.render(context_dict) # Renderizamos el contexto
 
     return HttpResponse(render)
+
+def fun_list_all_courses(request):
+    courses = Course.objects.all()
+
+    context_dict = {'courses': courses}
+
+    return render(
+        request=request,
+        context=context_dict,
+        template_name='courses/list_courses.html',
+    )
