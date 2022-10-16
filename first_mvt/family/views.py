@@ -1,15 +1,16 @@
-import re
+from datetime import datetime
 from django.shortcuts import render
 
 from family.models import Family_member
 
 # Create your views here.
 
-def fun_create_family_member(request, name: str, last_name: str, age: int, relationship: str):
+def fun_create_family_member(request, name: str, last_name: str, age: int, relationship: str, birth: str):
     '''Esta función vista crea un miembre de la familia a través de una URL.
-    Los parámetros para la función son nombre, apellido, edad y relación.
+    Los parámetros para la función son nombre, apellido, edad, relación y fecha de nacimiento.
     Se insertan por URL, separados por una barra.'''
-    member = Family_member(name=name, last_name=last_name, age=age, relationship=relationship)
+    birth = datetime.strptime(birth, "%Y-%m-%d")
+    member = Family_member(name=name, last_name=last_name, age=age, relationship=relationship, birth=birth)
     member.save()
 
     context_dict = {'member': member}
