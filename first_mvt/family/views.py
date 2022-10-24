@@ -30,3 +30,15 @@ def fun_show_family_members(request):
         context=context_dict,
         template_name='family/list_family_members.html',
     )
+
+def family_members(request):
+    '''This function render a list of all family members into DB'''
+    members = Family_member.objects.all()
+
+    context_dict = {'members': members}
+
+    return render(
+        request=request,
+        context=context_dict,
+        template_name='family/list_family_members.html',
+    )

@@ -1,8 +1,10 @@
 from django.urls import path
 
-from family.views import fun_create_family_member, fun_show_family_members
+from family import views
 
+app_name = 'family'
 urlpatterns = [
-    path('create_family_member/<str:name>/<str:last_name>/<int:age>/<str:relationship>', fun_create_family_member),
-    path('list_family_member/', fun_show_family_members),
+    # path('create_family_member/<str:name>/<str:last_name>/<int:age>/<str:relationship>', views.fun_create_family_member),
+    # path('list_family_member/', views.fun_show_family_members),
+    path('family_members/', views.family_members, name='family-members-list'),
 ]
