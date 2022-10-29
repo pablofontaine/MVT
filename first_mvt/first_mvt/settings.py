@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'family',
-    'dispenser',
 ]
 
 MIDDLEWARE = [
