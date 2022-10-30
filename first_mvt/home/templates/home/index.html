@@ -58,9 +58,25 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     {% block content_main %}
-                        <h1>Bienvenido</h1>
-                        <h2>Lore impsum</h2>
-                        <p>Este es un servidor de prueba</p>
+                        <h1>Buscar un familiar</h1>
+                        <div>
+                            <form action="{% url 'home:search-members' %}" method="GET">
+                                <input type="text" name="search_param" id="member_name_or_relationship" placeholder="Buscar..." {% if search_param %} value="{{ search_param }}" {% endif %}>
+                                <br>
+                                <input type="submit" class="btn btn-primary" value="Buscar...">
+                                <a style="color: black" href="{% url 'home:index' %}"><i class="fa fa-undo"></i></a>
+                            </form>
+                        </div>
+                        <!-- Luego de buscar, si existe algún resultado, imprimirlo acá -->
+                        <dir>
+                            {% if members %}
+                            <h2>Resultados</h2>
+                                {% for member in members %}
+                                <p>Encontramos a {{member.name}} {{member.last_name}}, que es tu {{member.relationship}}</p>
+                                <hr>
+                                {% endfor %}
+                            {% endif %}
+                        </dir>
                     {% endblock %}
                 </div>
             </div>
