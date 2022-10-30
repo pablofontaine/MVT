@@ -1,0 +1,36 @@
+{% extends 'home/index.html' %}
+{% load static %}
+
+{% block title %}
+Lista de miembros de la familia
+{% endblock %}
+
+{% block content_header %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('../../static/home/assets/img/home-bg.jpg')"> 
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Lista</h1>
+                            <span class="subheading">Miembros de la familia</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+{% endblock %}
+
+{% block content_main %}
+        <!-- Add family member button -->
+        <center><a class="btn btn-primary" href="{% url 'family:family-add-member' %}">Crear miembro de la familia</a></center>
+        <hr>
+        <!-- List family members-->
+        <ul>
+            {% for member in members %}
+            <li>
+                {{member}}
+            </li>
+            {% endfor %}
+        </ul>
+{% endblock %}
