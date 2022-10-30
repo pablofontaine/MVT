@@ -74,3 +74,9 @@ def family_add_member(request):
         context=context_dict,
         template_name='family/member_form.html',
     )
+
+def family_adventures(request):
+    pass
+
+def family_possessions(request):
+    pass

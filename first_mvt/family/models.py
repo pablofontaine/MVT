@@ -10,18 +10,3 @@ class Family_member(models.Model):
 
     def __str__(self):
         return f'Nombre: {self.name} | Apellido: {self.last_name} | Edad: {self.age} | Relación: {self.relationship}'
-
-class Adventure(models.Model):
-    place = models.CharField(max_length=40)
-    date = models.DateField()
-
-    def __str__(self) -> str:
-        return f'Fecha {self.date} | Lugar {self.place}'
-
-class Possession(models.Model):
-    item = models.CharField(max_length=40)
-    value = models.IntegerField()
-    owner = models.CharField(max_length=40)
-
-    def __str__(self) -> str:
-        return f'Bien {self.item} vale {self.value} y es de {self.owner}'
