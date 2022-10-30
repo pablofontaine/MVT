@@ -2,18 +2,18 @@
 {% load static %}
 
 {% block title %}
-Lista de miembros de la familia
+Lista de posesiones de los miembros de la familia
 {% endblock %}
 
 {% block content_header %}
         <!-- Page Header-->
-        <header class="masthead" style="background-image: url('https://cdn.pixabay.com/photo/2015/03/02/23/40/father-656734_960_720.jpg')"> 
+        <header class="masthead" style="background-image: url('https://cdn.pixabay.com/photo/2016/10/09/19/19/coins-1726618_960_720.jpg')"> 
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading">
                             <h1>Lista</h1>
-                            <span class="subheading">Miembros de la familia</span>
+                            <span class="subheading">Posesiones de la familia</span>
                         </div>
                     </div>
                 </div>
@@ -22,14 +22,11 @@ Lista de miembros de la familia
 {% endblock %}
 
 {% block content_main %}
-        <!-- Add family member button -->
-        <center><a class="btn btn-primary" href="{% url 'family:family-add-member' %}">Crear miembro de la familia</a></center>
-        <hr>
-        <!-- List family members-->
+        <!-- List family possessions-->
         <ul>
-            {% for member in members %}
+            {% for possession in possessions %}
             <li>
-                {{member}}
+                {{possession}}
             </li>
             {% endfor %}
         </ul>

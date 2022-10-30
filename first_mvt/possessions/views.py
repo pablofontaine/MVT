@@ -1,7 +1,18 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+
+from possessions.models import Possession
 
 # Create your views here.
 
 def index(request):
-    return HttpResponse("Prueba de URL possessions")
+
+    posessions = Possession.objects.all()
+    context_dict = {
+        'possessions': posessions,
+    }
+
+    return render(
+        request=request,
+        context=context_dict,
+        template_name='possessions/list_possessions.html'
+    )

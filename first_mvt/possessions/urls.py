@@ -4,5 +4,5 @@ from possessions import views
 
 app_name = 'possessions'
 urlpatterns = [
-    path('', views.index),
+    path('', views.index, name='index'),
 ]
