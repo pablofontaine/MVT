@@ -32,7 +32,7 @@ Lista de posesiones de los miembros de la familia
         <ul>
             {% for possession in possessions %}
             <li>
-                {{possession}}
+                Descripción: {{possession.item}} | Valor: ${{possession.value}} | Dueño: {{possession.owner}}
             </li>
             {% endfor %}
         </ul>
