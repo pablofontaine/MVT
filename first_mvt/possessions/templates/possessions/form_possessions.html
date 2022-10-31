@@ -12,7 +12,7 @@ Lista de posesiones de los miembros de la familia
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading">
-                            <h1>Lista</h1>
+                            <h1>Agregar</h1>
                             <span class="subheading">Posesiones de la familia</span>
                         </div>
                     </div>
@@ -22,18 +22,12 @@ Lista de posesiones de los miembros de la familia
 {% endblock %}
 
 {% block content_main %}
-        <!-- Button to add family possession -->
-        {% if message %}
-        <div>{{ message }}</div>
-        {% endif %}
-        <center><a href="{% url 'possessions:possesions-add' %}" class="btn btn-primary">Agregar posesion familiar</a></center>
-        <hr>
-        <!-- List family possessions-->
-        <ul>
-            {% for possession in possessions %}
-            <li>
-                {{possession}}
-            </li>
-            {% endfor %}
-        </ul>
+        <!-- Form add family possessions -->
+        <div>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" class="btn btn-primary" value="Crear posesion" />
+            </form>
+        </div>
 {% endblock %}
