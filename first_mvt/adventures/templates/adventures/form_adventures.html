@@ -2,10 +2,10 @@
 {% load static %}
 
 <!-- ckeditor-->
-{% block extrahead %}
+<!-- {% block extrahead %}
 <script>window.CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/';</script>
 {{ block.super }}
-{% endblock %}
+{% endblock %} -->
 <!-- ckeditor-->
 
 {% block title %}
@@ -33,7 +33,7 @@ Lista de posesiones de los miembros de la familia
         <div>
             <form action="" method="POST">
                 {% csrf_token %}
-                {{ form.media }} <!-- ckeditor-->
+                <!-- {{ form.media }} --> <!-- ckeditor-->
                 {{ form.as_p }}
                 <input type="submit" class="btn btn-primary" value="Crear aventura" />
             </form>

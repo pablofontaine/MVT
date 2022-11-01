@@ -1,5 +1,5 @@
 from django import forms
-from ckeditor.widgets import CKEditorWidget
+# from ckeditor.widgets import CKEditorWidget
 from adventures.models import Adventure
 
 class AdventuresForm(forms.Form):
@@ -10,7 +10,7 @@ class AdventuresForm(forms.Form):
         widget=forms.TextInput(
             attrs={
                 'placeholder': 'Ingrese lugar',
-                'required': True,
+                'required': "True",
             }
         ),
     )
@@ -19,16 +19,17 @@ class AdventuresForm(forms.Form):
         required=False,
         widget=forms.DateInput(
             attrs={
-                'required': True,
+                'required': "True",
             }
         ),
     )
     description = forms.CharField(
         label="Descripción: ",
         required=False,
-        widget=CKEditorWidget(
+        widget=forms.TextInput(
             attrs={
-                "required": True,
+                "required": "True",
+                'placeholder': 'Detalles de la aventura',
             }
         ),
     )

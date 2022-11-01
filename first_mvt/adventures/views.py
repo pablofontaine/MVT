@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from adventures.models import Adventure
 from adventures.forms import AdventuresForm
-from django.contrib import messages
+# from django.contrib import messages
+
 # Create your views here.
 
 def get_adventures(request):
@@ -45,7 +46,6 @@ def adventures_add(request):
                     description=data['description'],
                 )
                 new_adventure.save()
-                print("Exito")
 
             return render(
                 request=request,
