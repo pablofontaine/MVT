@@ -22,6 +22,13 @@ Aventuras de la familia
 {% endblock %}
 
 {% block content_main %}
+        <!-- Add new adventure -->
+        <div>
+            <center>
+                <a href="{% url 'adventures:adventures-add' %}" class="btn btn-primary">Crear nueva aventura</a>
+            </center>
+            <hr>
+        </div>
         <!-- List family adventures-->
         <ul>
             {% for adventure in adventures %}
