@@ -5,7 +5,7 @@ from django.db import models
 
 class Adventure(models.Model):
     place = models.CharField(max_length=40)
-    date = models.DateField()
+    date = models.TextField()
     description = models.TextField(max_length=500)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

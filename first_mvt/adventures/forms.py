@@ -14,10 +14,10 @@ class AdventuresForm(forms.Form):
             }
         ),
     )
-    date = forms.DateField(
+    date = forms.CharField(
         label="Fecha",
         required=False,
-        widget=forms.DateInput(
+        widget=forms.TextInput(
             attrs={
                 'required': "True",
             }
